@@ -1,0 +1,32 @@
+{
+	"name": "tsx-statements",
+	"version": "1.0.0",
+	"description": "useful components for working with conditions and statements in react",
+	"main": "dist/index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mrdexign/tsx-statements.git"
+	},
+	"author": "amirhosein kheirallahzadeh (mrdexign)",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/mrdexign/tsx-statements/issues"
+	},
+	"homepage": "https://github.com/mrdexign/tsx-statements#readme",
+	"scripts": {
+		"build": "tsc"
+	},
+	"dependencies": {
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2"
+	},
+	"devDependencies": {
+		"@types/react": "^17.0.38",
+		"@types/react-dom": "^17.0.0",
+		"typescript": ">=4.2.4"
+	},
+	"files": [
+		"/dist",
+		"package.json"
+	]
+}
