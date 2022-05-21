@@ -1,8 +1,10 @@
 import { FC, ReactNode, Children, Fragment } from 'react';
 
 export const isNodeID = (node: any, ...ids: string[]) => {
-	const str = node?.type?.toString();
-	return ids?.find(id => /csID = '(.*)'/g.exec(str)?.[1] === id);
+	let node_str = node?.type?.toString?.();
+	if (!node_str) return false;
+	for (const id of ids) if (node_str.includes(id)) return true;
+	return false;
 };
 
 type IfProps = { condition?: boolean; csID?: string };

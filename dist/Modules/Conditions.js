@@ -4,13 +4,20 @@ exports.Select = exports.OtherWise = exports.When = exports.Else = exports.If = 
 var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = require("react");
 var isNodeID = function (node) {
-    var _a;
+    var _a, _b;
     var ids = [];
     for (var _i = 1; _i < arguments.length; _i++) {
         ids[_i - 1] = arguments[_i];
     }
-    var str = (_a = node === null || node === void 0 ? void 0 : node.type) === null || _a === void 0 ? void 0 : _a.toString();
-    return ids === null || ids === void 0 ? void 0 : ids.find(function (id) { var _a; return ((_a = /csID = '(.*)'/g.exec(str)) === null || _a === void 0 ? void 0 : _a[1]) === id; });
+    var node_str = (_b = (_a = node === null || node === void 0 ? void 0 : node.type) === null || _a === void 0 ? void 0 : _a.toString) === null || _b === void 0 ? void 0 : _b.call(_a);
+    if (!node_str)
+        return false;
+    for (var _c = 0, ids_1 = ids; _c < ids_1.length; _c++) {
+        var id = ids_1[_c];
+        if (node_str.includes(id))
+            return true;
+    }
+    return false;
 };
 exports.isNodeID = isNodeID;
 var If = function (_a) {

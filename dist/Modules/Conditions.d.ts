@@ -1,5 +1,5 @@
 import { FC } from 'react';
-export declare const isNodeID: (node: any, ...ids: string[]) => string | undefined;
+export declare const isNodeID: (node: any, ...ids: string[]) => boolean;
 declare type IfProps = {
     condition?: boolean;
     csID?: string;
