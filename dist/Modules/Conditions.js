@@ -24,7 +24,7 @@ var If = function (_a) {
     var _b, _c;
     var _d = _a.csID, csID = _d === void 0 ? '@CS-IF' : _d, condition = _a.condition, children = _a.children;
     var nodes = react_1.Children.toArray(children);
-    var elseNodeIndex = (_b = nodes === null || nodes === void 0 ? void 0 : nodes.findIndex) === null || _b === void 0 ? void 0 : _b.call(nodes, function (node) { return (0, exports.isNodeID)(node, '@CS-ELSE'); });
+    var elseNodeIndex = (_b = nodes === null || nodes === void 0 ? void 0 : nodes.findIndex) === null || _b === void 0 ? void 0 : _b.call(nodes, function (node) { return (0, exports.isNodeID)(node, '@CS-ELSE') && !(0, exports.isNodeID)(node, '@CS-IF'); });
     if (elseNodeIndex >= 0) {
         if (!condition)
             return (0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: nodes === null || nodes === void 0 ? void 0 : nodes[elseNodeIndex] });

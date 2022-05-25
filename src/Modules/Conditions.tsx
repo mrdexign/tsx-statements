@@ -11,7 +11,7 @@ type IfProps = { condition?: boolean; csID?: string };
 export const If: FC<IfProps> = ({ csID = '@CS-IF', condition, children }) => {
 	const nodes = Children.toArray(children);
 
-	const elseNodeIndex = nodes?.findIndex?.(node => isNodeID(node, '@CS-ELSE'));
+	const elseNodeIndex = nodes?.findIndex?.(node => isNodeID(node, '@CS-ELSE') && !isNodeID(node, '@CS-IF'));
 	if (elseNodeIndex >= 0) {
 		if (!condition) return <>{nodes?.[elseNodeIndex]}</>;
 		else return <>{nodes?.splice?.(elseNodeIndex, 1) && nodes}</>;
